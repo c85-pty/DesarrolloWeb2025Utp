@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Desarrollo Web</title>
+</head>
+
+<body>
+
+<h1 id="titulo">Desarrollo Web</h1>
+<p>Puede realizar una suma a continuacion:</p>
+<label>Num1: </label>
+<input type="number" id="n1">
+
+<label>Num2: </label>
+<input type="number" id="n2">
+
+<input type="button" value="SUMAR" onclick="alert(parseFloat(n1.value) + parseFloat(n2.value))">
+
+<hr/>
+
+<label>Correo:</label>
+<input type="email" id="correo" />
+
+<input type="button" value="VER" onclick="ver()">
+<input type="button" value="NO VER" onclick="nover()">
+
+<input type="button" value="IMPRIMIR ALERT" onclick="mostrarlen()"/>
+
+<span id="demo">sadfjasodfjaskdj</span>
+
+<script>
+
+    const days = ["Sunday", "Monday", "Tuesday", "Miercoles", "Thursday", "Friday", "Saturday"];
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+    function ver(){
+        //document.getElementById("correo").style.visibility="visible";
+        document.getElementById("correo").value = "HOOOOOOOOOLA";
+        document.getElementById("correo").style.display = "none";
+    }
+
+    function nover(){
+        //document.getElementById("correo").style.visibility = "hidden";
+        document.getElementById("correo").style.display = "block";
+    }
+
+    function mostrarlen(){
+        
+        //let cantidadletras = document.getElementById("correo").value.charAt(3);
+        let cantidadletras = document.getElementById("correo").value.charCodeAt(3);
+        document.getElementById("correo").style.color = "red";
+        document.getElementById("titulo").style.background = "blue";
+        alert("Cantidad de Letras: "+cantidadletras+" LA FRUTA ES: "+fruits[1]);
+
+
+        const d = new Date();
+        let day = days[d.getDay()];
+        document.getElementById("demo").innerHTML = day;
+
+    }
+
+</script>
+
+</body>
+</html>
