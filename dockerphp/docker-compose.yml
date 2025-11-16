@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  web:
+    image: php:8.4-apache
+    volumes:
+      - ./html:/var/www/html
+    ports:
+      - "85:80"
+    depends_on:
+      - db
+  db:
+    image: mysql:8.0.44-debian
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: my_database
+      MYSQL_USER: my_user
+      MYSQL_PASSWORD: my_password
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+volumes:
+  db_data:
